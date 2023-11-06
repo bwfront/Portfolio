@@ -1,18 +1,94 @@
 @import '_variables.sass'
-
 .head
     width: 100vw
     height: 100vh
     max-height: 100%
-    max-width: 100%
+    max-width: 2000px
     overflow: hidden
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(234,240,255,1) 100%)
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, #d7e2fe 100%)
 
 .navigation
+    z-index: 10
+    position: absolute
+    max-width: 2000px
+    width: 100%
+    display: flex
+    justify-content: space-between
+    top: 30px
     img
+        margin-left: 100px
         width: 64px
         height: 69px
+
     nav
-        a
-            font-size: 23px
+        margin-right: 100px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        div
+            display: flex
+            justify-content: flex-end
+            width: 120px
+            margin-left: 50px
+            a
+                display: inline-block
+                cursor: pointer
+                font-size: 23px
+                color: $base-color
+                font-family: 'Montserrat', sans-serif
+
+                &:hover
+                    transition: all 225ms
+                    font-weight: 700
+
+.content
+    max-width: 2000px
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    position: relative
+    height: 100vh
+
+    img
+        z-index: 10
+        position: absolute
+        bottom: 0
+        left: 20%
+        transform: translateX(-50%)
+        width: 550px
+        height: auto
+
+    .head-content-text
+        position: absolute
+        right: 100px
+        top: 30%
+        .head-text
+            z-index: 10
             color: $base-color
+            font-size: 64px
+            font-family: 'Montserrat', sans-serif
+
+        .head-text-big
+            color: $base-color
+            font-family: 'Baloo Da 2', sans-serif
+            text-transform: uppercase
+            margin: -30px 0
+        .front
+            font-size: 128px
+            font-weight: 800
+        .dev
+            margin: -80px 0
+            font-size: 118px
+            font-weight: 800
+
+.background-ellipse
+    position: relative
+    max-height: 100vh
+    width: 100%
+.ellipse-big
+    position: absolute
+    top: -74px
+    left: -199px
+    width: 900px
+    height: 900px
