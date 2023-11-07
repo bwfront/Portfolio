@@ -104,7 +104,7 @@
     max-width: 2000px
     position: relative
     margin-top: 20px
-    margin-right: 360px
+    margin-right: 425px
     div
         display: flex
         flex-direction: column
@@ -124,3 +124,25 @@
             height: calc( 100% - 32px )
             width: 2px
             background-color: $base-color
+
+.left-icon-container
+    position: relative
+    max-width: 2000px
+    margin-right: 125px
+    .icons-links
+        position: absolute
+        right: 0
+        bottom: 100px
+        display: flex
+        flex-direction: column
+        .icon-link
+            cursor: pointer
+            transition: 225ms
+            position: relative
+            width: 20px
+            display: flex
+            justify-content: flex-start
+            &:hover
+                margin-left: -10px
+            img
+                padding: 12.5px
