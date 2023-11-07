@@ -1,0 +1,52 @@
+.skillset
+    background-image: linear-gradient(120deg, rgba(89,136,255,1) 0%, rgba(89,136,255,1) 50%, rgba(0,67,240,1) 100%)
+    position: relative
+
+.skillset-container
+    padding: 100px 0 90px 0
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+.skillset-heading
+    color: #fff
+    font-family: 'Baloo Da 2', sans-serif
+    font-size: 96px
+    line-height: 96px
+    font-weight: 800
+    margin-bottom: 60px
+
+.skills-con
+    color: #fff
+    font-family: 'Montserrat', sans-serif
+    width: calc( 100% - 400px )
+    display: flex
+    gap: 47px
+    flex-direction: column
+    div
+        display: flex
+        width: 100%
+        .skill
+            display: flex
+            align-items: center
+            flex-direction: column
+            text-align: center
+            font-size: 16px
+            transition: all 225ms
+
+            img
+                height: 75px
+                width: auto
+                transition: all 225ms
+
+            &:hover
+                transition: 105ms
+                font-weight: 700
+                img
+                    transition: all 225ms
+                    margin-left: 10px
+                    margin-top: -10px
+                p
+                    transition: all 225ms
+                    margin-top: 25px
