@@ -7,6 +7,7 @@ import { HeadComponent } from './head/head.component';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { SkillsetComponent } from './skillset/skillset.component';
 import { MyworkComponent } from './mywork/mywork.component';
+import { MyworkJoinComponent } from './mywork-join/mywork-join.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MyworkComponent } from './mywork/mywork.component';
     HeadComponent,
     AboutmeComponent,
     SkillsetComponent,
-    MyworkComponent
+    MyworkComponent,
+    MyworkJoinComponent
   ],
   imports: [
     BrowserModule,
