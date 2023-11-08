@@ -1,8 +1,10 @@
 @import '_variables.sass'
+@import 'class.sass'
 
 .mywork
     position: relative
     padding: 100px
+    overflow: hidden //Elipse
     .mywork-head
         .mywork-heading
             font-size: 96px
@@ -14,20 +16,6 @@
             font-size: 23px
             margin-top: 40px
             font-family: 'Montserrat', sans-serif
-
-.ellipse-con
-    .ellipse-1
-        position: absolute
-        width: 109px
-        height: 109px
-        top: 50px
-        left: 580px
-    .ellipse-2
-        position: absolute
-        width: 183px
-        height: 183px
-        right: 100px
-        top: 200px
 
 .mywork-project
     display: flex
@@ -50,7 +38,7 @@
         left: 50%
         bottom: 0
         margin-left: 80px
-        width: 620px
+        width: 540px
 
 .title
     font-family: 'Baloo Da 2', sans-serif
@@ -67,6 +55,7 @@
 .description
     font-size: 16px
     font-family: 'Montserrat', sans-serif
+    line-height: 20px
 a
     text-decoration: none
 
@@ -88,7 +77,7 @@ a
     justify-content: center
     width: 100px
     margin-bottom: 5px
-    margin-top: 40px
+    margin-top: 30px
     &:before
         content: ''
         position: absolute
@@ -114,7 +103,7 @@ a
     right: 50% !important
     bottom: 0
     margin-right: 80px
-    width: 620px
+    width: 540px
     display: flex
     flex-direction: column
     justify-content: flex-end
@@ -123,3 +112,47 @@ a
 
 .img-second
     left: 50% !important
+
+.ellipse-con
+    width: 100%
+    overflow: hidden
+    .ellipse-1
+        position: absolute
+        width: 109px
+        height: 109px
+        top: 50px
+        left: 580px
+    .ellipse-2
+        position: absolute
+        width: 183px
+        height: 183px
+        right: 100px
+        top: 200px
+    .ellipse-3
+        position: absolute
+        width: 393px
+        height: 393px
+        left: -196px
+        transform: rotate(82deg)
+        top: 580px
+    .ellipse-4
+        position: absolute
+        width: 650px
+        height: 650px
+        right: -170px
+        transform: rotate(82deg)
+        top: 860px
+    .ellipse-5
+        position: absolute
+        width: 51px
+        height: 51px
+        left: 100px
+        top: 1300px
+    .ellipse-6
+        position: absolute
+        width: 238px
+        height: 238px
+        left: 370px
+        top: 1700px
+        transform: rotate(82deg)
+
