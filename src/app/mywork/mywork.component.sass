@@ -28,3 +28,98 @@
         height: 183px
         right: 100px
         top: 200px
+
+.mywork-project
+    display: flex
+    height: 400px
+    position: relative
+    margin: 100px 0
+    img
+        position: absolute
+        right: 50%
+        width: 620px
+        height: 393px
+        box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15)
+        transition: 225ms
+        &:hover
+            transform: scale(1.05)
+            margin-top: -20px
+
+    .mywork-description
+        position: absolute
+        left: 50%
+        bottom: 0
+        margin-left: 80px
+        width: 620px
+
+.title
+    font-family: 'Baloo Da 2', sans-serif
+    font-size: 45px
+    line-height: 54px
+    font-weight: 750
+    color: $base-color
+    margin-bottom: 5px
+.languages
+    font-size: 23px
+    color: $base-color
+    font-family: 'Montserrat', sans-serif
+    margin-bottom: 15px
+.description
+    font-size: 16px
+    font-family: 'Montserrat', sans-serif
+a
+    text-decoration: none
+
+.button
+    font-size: 23px
+    font-family: 'Montserrat', sans-serif
+    margin-top: 15px
+    color: $base-color
+    cursor: pointer
+    padding: 15px 30px
+    border-radius: 10px
+    border: solid 2px $base-color
+    position: relative
+    overflow: hidden
+    background-color: #fff
+    transition: color 0.4s
+    z-index: 1
+    display: flex
+    justify-content: center
+    width: 100px
+    margin-bottom: 5px
+    margin-top: 40px
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-image: linear-gradient(90deg, rgba(59,108,232,1) 0%, rgba(89,136,255,1) 40%, rgba(76,126,253,1) 71%, rgba(49,94,212,1) 100%)
+        transition: transform 0.2s ease
+        z-index: -1
+        transform: scaleX(0) scaleY(0.3)
+        transform-origin: top left
+    &:hover
+        color: #fff
+        transition: 0.3s
+        transform: scale(1.05)
+        &:before
+            transform: scale(1)
+
+.mywork-description-second
+    left: unset
+    position: absolute
+    right: 50% !important
+    bottom: 0
+    margin-right: 80px
+    width: 620px
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-end
+    text-align: right
+
+.img-second
+    left: 50% !important

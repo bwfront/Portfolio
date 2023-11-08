@@ -15,8 +15,16 @@
         <p>This page is a sample of my work - please feel free to try<br>them out.</p>
     </div>
     <div class="work-con">
-        <div style="height: 400px; position: relative; border: solid;" >
-            <app-mywork-join></app-mywork-join>
+        <div class="mywork-project" *ngFor="let project of projects; let i = index">
+            <img src="assets/images/mywork/{{ project.img }}" alt="{{ project.title }}" [ngClass]="{'img-second': i % 2 === 1}">
+            <div [ngClass]="i % 2 === 1 ? 'mywork-description-second' : 'mywork-description'">
+                <div class="title">{{ project.title }}</div>
+                <div class="languages">{{ project.devLanguage }}</div>
+                <div class="description">{{ project.description }}</div>
+                <a href="{{ project.github }}" target="_blank">
+                    <div class="button">Github</div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
