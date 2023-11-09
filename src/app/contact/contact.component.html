@@ -1,32 +1,52 @@
-<div class="contact">
+<div class="contact" id="contact">
     <div class="heading">Contact</div>
     <div class="content">
         <div class="text-con">
             <div class="text-heading">Got a problem to solve?</div>
             <div class="text">
-                Use this form to get in touch. Your thoughts and projects matter to me, and I'm ready to support them with my skills.
+                Use this form to get in touch. Your thoughts and projects matter to me, and I'm ready to support them
+                with my skills.
             </div>
             <div class="text-footer"> Need a Frontemd developer? <span>Contact Me!</span></div>
         </div>
-        
-        
         <div class="form">
-            <form id="contact-form">
-                <div class="form-group">
-                  <input type="text" id="name" placeholder="Your name" required>
+            <form id="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)" novalidate>
+                <div class="form-group floating-label">
+                    <input [(ngModel)]="inputValueName" name="inputValueName" #nameField="ngModel"
+                        (ngModelChange)="checkInputValues()" type="text" id="name" placeholder=" " required>
+                    <label for="name">Your name</label>
+                    <span *ngIf="nameField.invalid && nameField.touched" class="error-span">Name is required.</span>
                 </div>
-                <div class="form-group">
-                  <input type="email" id="email" placeholder="Your email" required>
+                <div class="form-group floating-label">
+                    <input [(ngModel)]="inputValueMail" name="inputValueMail" #emailField="ngModel" type="email"
+                        id="email" (ngModelChange)="checkInputValues()" placeholder=" " required pattern=".+@.+\..+">
+                    <label for="email">Your email</label>
+                    <span *ngIf="emailField.invalid && emailField.touched" class="error-span">A valid email is
+                        required.</span>
                 </div>
-                <div class="form-group">
-                  <textarea id="message" placeholder="Your message" rows="8" required></textarea>
+                <div class="form-group floating-label">
+                    <textarea [(ngModel)]="inputValueMessage" name="inputValueMessage" #messageField="ngModel"
+                        id="message" (ngModelChange)="checkInputValues()" placeholder=" " rows="8" required></textarea>
+                    <label class="label-textarea" for="message">Your message</label>
+                    <span *ngIf="messageField.invalid && messageField.touched" class="error-span">Message is
+                        required.</span>
                 </div>
                 <div class="form-group checkbox">
-                  <input type="checkbox" id="privacy" name="privacy" required>
-                  <label for="privacy">I've read the privacy policy and agree to the processing of my data as outlined.</label>
+                    <label [for]="checkboxId">
+                        <input type="checkbox" [id]="checkboxId" [(ngModel)]="isChecked" [checked]="isChecked"
+                            name="checkbox" #checkboxField="ngModel" (change)="onCheckboxChange($event)" [hidden]="true"
+                            required />
+                        <img [src]="getCheckboxImage()" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()"
+                            [alt]="isChecked ? 'Checked' : 'Not checked'" />
+
+                        <div>I've read the <a>privacy policy</a> and agree to the processing of my data as outlined.
+                        </div>
+                    </label>
                 </div>
-                <button type="submit">Submit</button>
-              </form>
+                <div class="button-send">
+                    <button type="submit" [disabled]="contactForm.invalid" class="button">Say Hello :)</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

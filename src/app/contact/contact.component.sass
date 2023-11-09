@@ -1,8 +1,10 @@
 @import '_variables'
+@import 'class'
 
 .contact
     position: relative
     margin: 0 100px
+    padding-bottom: 400px
     .heading
         font-size: 90px
         font-weight: 800
@@ -38,18 +40,81 @@
     gap: 20px
     flex-direction: column
 
-.form-group
-    input, textarea
-        font-size: 16px
-        width: 100%
-        border: solid $base-color
-        padding: 15px 25px
-        border-radius: 10px
-        resize: none
 .checkbox
     display: flex
     justify-content: flex-start
+    align-items: center
     width: 100%
-    #privacy
-        //img einfüfen check box
-        
+    label
+        display: flex
+        align-items: center
+        font-size: 14px
+        font-family: 'Montserrat', sans-serif
+        input, img
+            margin-right: 10px
+
+        a
+            color: $base-color
+            cursor: pointer
+            margin: 0 5px
+            &:hover
+                text-decoration: underline
+
+.form-group
+    position: relative
+    padding-top: 15px
+    font-family: 'Montserrat', sans-serif
+
+    input, textarea
+        font-size: 16px
+        width: calc( 100% - 50px )
+        border: 1px solid $base-color
+        padding: 15px 25px
+        border-radius: 10px
+        resize: none
+        background-color: transparent
+        transition: border-color 0.3s
+
+    input:focus, textarea:focus
+        border-color: #333
+
+    input:focus + label, textarea:focus + label, input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label
+        position: absolute !important
+        top: 8px !important
+        left: 15px
+        font-size: 14px
+        color: #333
+        background-color: #ffffff
+        padding: 0 2px
+
+.floating-label label
+    position: absolute
+    top: calc( 50% - 3px )
+    left: 25px
+    font-size: 16px
+
+    color: #aaa
+
+    pointer-events: none
+    transition: 0.3s ease all
+
+.label-textarea
+    top: 30px !important
+
+.form-group
+    input:focus::placeholder, textarea:focus::placeholder
+        color: transparent
+
+.button-send
+    display: flex
+    width: 100%
+    justify-content: center
+.button
+    font-size: 23px
+    width: 200px
+
+.error-span
+    font-size: 14px
+    color: #e61c41
+    font-family: 'Montserrat', sans-serif
+    margin-top: -10px
