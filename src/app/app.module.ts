@@ -9,6 +9,7 @@ import { SkillsetComponent } from './skillset/skillset.component';
 import { MyworkComponent } from './mywork/mywork.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     SkillsetComponent,
     MyworkComponent,
     ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
