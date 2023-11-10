@@ -4,7 +4,7 @@
 .contact
     position: relative
     padding: 0 100px
-    padding-bottom: 400px
+    padding-bottom: 480px
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, #d7e2fe8a 100%)
     .heading
         font-size: 90px
@@ -15,7 +15,6 @@
 .content
     display: flex
     justify-content: space-between
-
     margin: 40px 0
 
 .text-con
@@ -54,12 +53,26 @@
         input, img
             margin-right: 10px
 
-.privacy a
-    color: $base-color
-    cursor: pointer
-    margin: 0 5px
-    &:hover
-        text-decoration: underline
+.privacy
+    a
+        color: $base-color
+        cursor: pointer
+        margin: 0 5px
+        &::after
+            content: ''
+            position: absolute
+            width: 100px
+            height: 2px
+            border-radius: 10px
+            bottom: -1px
+            left: 145px
+            background-color: $base-color
+            transform-origin: bottom left
+            transition: transform 0.25s ease-out
+            transform: scaleX(0)
+        &:hover::after
+            transform: scaleX(1)
+            transform-origin: bottom right
 
 .form-group
     position: relative
@@ -121,3 +134,25 @@
     font-family: 'Montserrat', sans-serif
     position: absolute
     margin-top: 5px
+
+
+.scroll
+    position: absolute
+    bottom: 70px
+
+.background-ellipse
+    position: relative
+    .ellipse-1
+        position: absolute
+        width: 204px
+        height: 204px
+        left: 100px
+        top: 0px
+        z-index: 0
+    .ellipse-2
+        position: absolute
+        width: 73px
+        height: 73px
+        top: 330px
+        right: 20px
+        z-index: 0

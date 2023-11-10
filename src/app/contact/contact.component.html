@@ -49,4 +49,10 @@
             </form>
         </div>
     </div>
+    <a *ngIf="scrollHover" (mouseover)="scrollHover=false" class="scroll"><img src="assets/images/icons/scroll/up2.png" alt="scroll-top"></a>
+    <a *ngIf="!scrollHover" (mouseout)="scrollHover=true" class="scroll" href="#head"><img src="assets/images/icons/scroll/up1.png" alt="scroll-top"></a>
+    <div class="background-ellipse">
+        <img class="ellipse-1" src="assets/images/Ellipse.png" alt="bg">
+        <img class="ellipse-2" src="assets/images/Ellipse.png" alt="bg">
+    </div>
 </div>

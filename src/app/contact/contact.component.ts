@@ -25,6 +25,8 @@ export class ContactComponent {
   inputValueMail: string;
   inputValueMessage: string;
 
+  scrollHover: boolean = true;
+
   constructor(){
   }
 
