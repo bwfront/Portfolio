@@ -83,7 +83,6 @@ a
 
 .ellipse-con
     width: 100%
-    overflow: hidden
     .ellipse-1
         position: absolute
         width: 109px
@@ -124,4 +123,90 @@ a
         margin-left: -180px
         top: 1680px
         transform: rotate(82deg)
+    .ellipse-7
+        display: none
 
+/* Responsive */
+@media ( max-width: 1435px )
+    .mywork
+        padding-bottom: 0px !important
+    .work-con
+        margin-top: 80px
+    .mywork-project
+        flex-direction: column
+        height: unset !important
+        align-items: center
+        margin-top: -30px
+        img, .img-second
+            position: unset !important
+            left: unset !important
+            right: unset !important
+            margin: 0 !important
+        .mywork-description, .mywork-description-second
+            margin-top: 50px !important
+            display: flex
+            flex-direction: column
+            position: unset !important
+            left: unset !important
+            right: unset !important
+            align-items: center
+            margin: 0
+            justify-content: center !important
+            .description
+                text-align: center
+
+@media ( max-width: 1030px )
+    .ellipse-1
+        width: 60px !important
+        height: 60px !important
+        left: 560px !important
+    .ellipse-2
+        width: 140px !important
+        height: 140px !important
+        top: 300px !important
+        left: 560px !important
+    .ellipse-4
+        width: 500px !important
+        height: 500px !important
+        top: 1050px !important
+        left: 560px !important
+    .ellipse-5
+        display: none
+    .ellipse-6
+        width: 200px !important
+        height: 200px !important
+        top: 1850px !important
+        left: 60px !important
+    .ellipse-7
+        display: unset !important
+        position: absolute
+        width: 180px
+        height: 180px
+        right: 30px
+        top: 2200px
+
+@media ( max-width: 750px )
+    .languages
+        text-align: center
+    .mywork-project
+        width: calc( 100vw - 100px )!important
+        img, .img-second
+            width: 100% !important
+            height: unset !important
+    .mywork-description, .mywork-description-second
+        width: calc( 100vw - 100px )!important
+    .ellipse-7
+        display: none !important
+@media ( max-width: 600px )
+    .mywork-project
+       margin-top: -50px 
+    .mywork
+        padding: 0 50px !important
+
+@media ( max-width: 500px )
+    .mywork-head
+        .mywork-heading
+            font-size: 61px !important
+        p
+            font-size: 16px !important
+            margin-top: 0 !important
