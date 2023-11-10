@@ -7,7 +7,7 @@
     max-width: $max-w
     overflow: hidden //Elipse
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, #d7e2fe8a 100%)
-
+    position: relative
 .navigation
     z-index: 10
     position: absolute
@@ -15,6 +15,7 @@
     width: 100%
     display: flex
     justify-content: space-between
+    align-items: center
     top: 30px
     img
         margin-left: 100px
@@ -43,6 +44,13 @@
                     transition: all 225ms
                     font-weight: 700
 
+.mobile-nav
+    display: none
+    margin-right: 100px
+    img
+        height: 40px
+        width: auto
+
 .content
     max-width: $max-w
     width: 100%
@@ -56,10 +64,9 @@
         z-index: 10
         position: absolute
         bottom: 0
-        left: 20%
-        transform: translateX(-50%)
-        width: 550px
-        height: auto
+        left: 90px
+        height: calc( 100% - 150px )
+        width: auto
 
     .head-content-text
         position: absolute
@@ -140,3 +147,85 @@
                 margin-left: -10px
             img
                 padding: 12.5px
+
+/* Respnsive */
+
+@media ( max-width: 1450px )
+    .ellipse-big
+        left: -300px
+
+@media ( max-width: 1350px )
+    .head-content-text
+        .head-text
+            font-size: 55px !important
+        .front
+            font-size: 108px !important
+        .dev
+            margin: -80px 0
+            font-size: 100px !important
+
+@media ( max-width: 1240px )
+    .ellipse-big
+        left: -400px
+    .content
+        img
+            bottom: -200px !important
+            height: calc( 100% - 250px ) !important
+
+@media  ( max-width: 1150px )
+    .navigation
+        nav
+            display: none
+        .mobile-nav
+            display: unset !important
+    .ellipse-big
+        width: 120vh !important
+        height: auto !important
+    .scroll-container
+        display: none
+    .head-content-text
+        left: 100px !important
+        top: 150px !important
+        .head-text
+            color: #fff !important
+        .front
+            color: #fff !important
+        .dev
+            color: #fff !important
+
+@media  ( max-width: 890px )
+    .left-icon-container
+        display: none
+    .ellipse-big
+        top: -200px !important
+        right: 100px !important
+        left: unset !important
+    .head-content-text
+        .head-text
+            font-size: 37px !important
+        .front
+            font-size: 73px !important
+        .dev
+            margin: -60px 0 !important
+            font-size: 67px !important
+    .content
+        img
+            height: calc( 100% - 150px ) !important
+            margin-left: auto
+            margin-right: auto
+            left: 0
+            right: 0 
+            width: auto
+
+@media  ( max-width: 750px )
+    .head-content-text
+        margin-left: -50px !important
+
+    .navigation
+        img
+            margin-left: 50px !important
+        nav
+            display: none
+        .mobile-nav
+            display: unset
+            margin-right: 50px !important
