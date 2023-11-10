@@ -20,13 +20,16 @@
 .skills-con
     color: #fff
     font-family: 'Montserrat', sans-serif
-    width: calc( 100% - 400px )
+    width: 100%
     display: flex
     gap: 47px
+    align-items: center
     flex-direction: column
     div
         display: flex
-        width: 100%
+        width: calc( 100% - 120px )
+        justify-content: space-between
+        flex-wrap: wrap
         .skill
             display: flex
             align-items: center
@@ -34,7 +37,7 @@
             text-align: center
             font-size: 16px
             transition: all 225ms
-
+            width: 20%
             img
                 height: 75px
                 width: auto
@@ -50,3 +53,27 @@
                 p
                     transition: all 225ms
                     margin-top: 15px
+
+/*Responsive */ 
+@media ( max-width:  1050px )
+    .skill
+        width: 33% !important
+    .skills-con
+        div
+            flex-wrap: wrap
+            justify-content: center
+    
+@media ( max-width:  750px )
+    .skillset-container
+        padding: 50px 0 !important
+    
+    .skills-con
+        div
+            width: calc( 100% - 50px )
+
+@media ( max-width:  520px )
+    .skillset-heading
+        font-size: 64px
+        margin-bottom: 10px
+    .skill
+        width: 50% !important
