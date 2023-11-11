@@ -4,14 +4,12 @@
     width: 100vw
     height: 100vh
     max-height: 1325px
-    max-width: $max-w
     overflow: hidden //Elipse
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, #d7e2fe8a 100%)
     position: relative
 .navigation
     z-index: 10
     position: absolute
-    max-width: $max-w
     width: 100%
     display: flex
     justify-content: space-between
@@ -149,11 +147,19 @@
                 padding: 12.5px
 
 /* Respnsive */
-
+@media ( max-width: 1550px )
+    .content
+        img
+            max-width: 700px !important
+            height: auto
+            max-height: calc( 100% - 150px ) 
 @media ( max-width: 1450px )
     .ellipse-big
         left: -300px
-
+    .content
+        img
+            max-width: 600px !important
+            height: auto
 @media ( max-width: 1350px )
     .head-content-text
         .head-text
@@ -170,6 +176,8 @@
     .content
         img
             bottom: -200px !important
+            width: auto !important
+            max-width: unset !important
             height: calc( 100% - 250px ) !important
 
 @media  ( max-width: 1150px )
@@ -210,12 +218,14 @@
             font-size: 67px !important
     .content
         img
-            height: calc( 100% - 150px ) !important
+            max-height: calc( 100% - 150px ) !important
+            max-width: calc( 100% - 100px ) !important
             margin-left: auto
             margin-right: auto
             left: 0
             right: 0
-            width: auto
+            width: auto !important
+            height: auto !important
 
 @media  ( max-width: 750px )
     .head-content-text
@@ -253,7 +263,8 @@
 
     .content
         img
-            max-height: calc( 100% - 300px )
+            max-width: calc( 100% - 100px ) !important
+            max-height: calc( 100% - 300px ) !important
 
 @media  ( max-width: 373px )
     .head-content-text
