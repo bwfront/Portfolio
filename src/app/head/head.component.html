@@ -9,9 +9,16 @@
             <div><a href="#skillset" name="Skill set">Skill set</a></div>
             <div><a href="#mywork" name="My Work">My work</a></div>
         </nav>
-        <div class="mobile-nav">
-            <img src="assets/images/icons/burgermenu/burger.png" alt="navigation">
+        <div class="mobile-navigatin-container" *ngIf="mobilemenu">
+            <a (click)="mobileMenu()" href="#aboutme">About me</a>
+            <a (click)="mobileMenu()" href="#skillset">Skill set</a>
+            <a (click)="mobileMenu()" href="#mywork">My work</a>
+            <a (click)="mobileMenu()" href="#contact">Contact</a>
         </div>
+        <a (click)="mobileMenu()" class="mobile-nav">
+            <img *ngIf="!mobilemenu" src="assets/images/icons/burgermenu/burger.png" alt="navigation">
+            <img *ngIf="mobilemenu" src="assets/images/icons/burgermenu/close.png" alt="navigation">
+        </a>
     </div>
     <div class="content unselectable">
         <img src="assets/images/me.png" alt="bennet witczak">

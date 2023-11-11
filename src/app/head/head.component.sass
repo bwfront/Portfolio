@@ -45,10 +45,33 @@
 .mobile-nav
     display: none
     margin-right: 100px
+    z-index: 1001
+    cursor: pointer
     img
+        z-index: 19000
         height: 40px
         width: auto
 
+.mobile-navigatin-container
+    padding: 200px 0
+    position: absolute
+    top: -50px
+    width: 100%
+    display: flex
+    align-items: center
+    flex-direction: column
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5004595588235294) 30%, rgba(255,255,255,0.7973783263305322) 50%, rgba(255,255,255,0.9) 100%)
+    z-index: 1000
+    a
+        z-index: 10000
+        margin: 10px
+        color: #1023b4
+        font-size: 25px
+        font-weight: 500
+        font-family: 'Montserrat', sans-serif
+        text-decoration: none
+        &:hover
+            color: $base-color
 .content
     max-width: $max-w
     width: 100%
@@ -59,7 +82,7 @@
     height: 100vh
 
     img
-        z-index: 10
+        z-index: 0
         position: absolute
         bottom: 0
         left: 90px
@@ -152,7 +175,7 @@
         img
             max-width: 700px !important
             height: auto
-            max-height: calc( 100% - 150px ) 
+            max-height: calc( 100% - 150px )
 @media ( max-width: 1450px )
     .ellipse-big
         left: -300px

@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./head.component.sass']
 })
 export class HeadComponent {
-
+  mobilemenu: boolean = false;
+  mobileMenu(){
+    this.mobilemenu = !this.mobilemenu;
+  }
 }
