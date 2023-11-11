@@ -9,6 +9,7 @@ export class MyworkComponent {
   projects = [
     {
       title: 'Join',
+      livetest: 'https://bennetwitczak.com/join',
       img: 'join.png',
       devLanguage: 'JavaScript | HTML | CSS',
       description:
@@ -17,6 +18,7 @@ export class MyworkComponent {
     },
     {
       title: 'Sharkie',
+      livetest: 'https://bennetwitczak.com/sharkie',
       img: 'sharkie.png',
       devLanguage: 'JavaScript | HTML | CSS',
       description:
@@ -24,12 +26,13 @@ export class MyworkComponent {
       github: 'https://github.com/bwfront/Sharkie',
     },
     {
-      title: 'Sharkie',
+      title: 'Placeholder',
+      livetest: '',
       img: 'sharkie.png',
-      devLanguage: 'JavaScript | HTML | CSS',
+      devLanguage: 'Placeholder',
       description:
-        'Navigate the underwater world as Sharkie. Overcome enemies, avoid dangers, and collect coins in a straightforward aquatic adventure. Face the endboss in a simple battle of wit and reflexes.',
-      github: 'https://github.com/bwfront/Sharkie',
+        'Placeholder.',
+      github: 'https://github.com/bwfront/Placeholder',
     },
   ];
 }
