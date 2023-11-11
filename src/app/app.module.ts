@@ -10,6 +10,9 @@ import { MyworkComponent } from './mywork/mywork.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { ImprintComponent } from './imprint/imprint.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { FooterComponent } from './footer/footer.component';
     MyworkComponent,
     ContactComponent,
     FooterComponent,
+    ImprintComponent,
+    PortfolioComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,
