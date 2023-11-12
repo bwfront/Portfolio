@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormService } from '../services/form-service';
+import { ScrollService } from '../services/scroll.service';
 
 @Component({
   selector: 'app-contact',
@@ -26,8 +27,34 @@ export class ContactComponent {
   emailSend: boolean = false;
 
   scrollHover: boolean = true;
+  innerWidth: any;
 
-  constructor(private formService: FormService) {}
+  constructor(
+    private formService: FormService,
+    private scrollService: ScrollService
+  ) {}
+
+  ngOnInit() {
+    this.innerWidth = window.innerWidth;
+    this.scrollOnTopMobile();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.innerWidth = window.innerWidth;
+    this.scrollOnTopMobile();
+  }
+
+  scrollOnTopMobile(){
+    if(this.innerWidth < 600){
+      console.log('asdas');
+      this.scrollHover = false
+    }
+  }
+
+  scrollOnTop() {
+    this.scrollService.scrollToTop();
+  }
 
   onCheckboxChange(event: Event) {
     this.isChecked = (event.target as HTMLInputElement).checked;
@@ -36,9 +63,9 @@ export class ContactComponent {
 
   onSubmit(formValue: any) {
     this.formService.sendForm(formValue).subscribe();
-    this.inputValueName = ''
-    this.inputValueMail = ''
-    this.inputValueMessage = ''
+    this.inputValueName = '';
+    this.inputValueMail = '';
+    this.inputValueMessage = '';
     this.emailSend = true;
   }
 
@@ -64,8 +91,8 @@ export class ContactComponent {
       this.inputValueMail &&
       this.isChecked
     )
-    if(!this.emailSend){
-      this.buttonEnable = true;
-    }
+      if (!this.emailSend) {
+        this.buttonEnable = true;
+      }
   }
 }
