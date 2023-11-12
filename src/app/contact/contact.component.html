@@ -10,25 +10,25 @@
             <div class="text-footer"> Need a Frontemd developer? <span>Contact Me!</span></div>
         </div>
         <div class="form">
-            <form id="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)" novalidate>
+            <form id="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
                 <div class="form-group floating-label">
-                    <input [(ngModel)]="inputValueName" name="inputValueName" #nameField="ngModel"
+                    <input [(ngModel)]="inputValueName" name="name" #nameField="ngModel"
                         (ngModelChange)="checkInputValues()" type="text" id="name" placeholder=" " required>
                     <label for="name">Your name</label>
-                    <span *ngIf="nameField.invalid && nameField.touched" class="error-span">Name is required.</span>
+                    <span *ngIf="nameField.invalid && nameField.touched && !emailSend" class="error-span">Name is required.</span>
                 </div>
                 <div class="form-group floating-label">
-                    <input [(ngModel)]="inputValueMail" name="inputValueMail" #emailField="ngModel" type="email"
+                    <input [(ngModel)]="inputValueMail" name="mail" #emailField="ngModel" type="email"
                         id="email" (ngModelChange)="checkInputValues()" placeholder=" " required pattern=".+@.+\..+">
                     <label for="email">Your email</label>
-                    <span *ngIf="emailField.invalid && emailField.touched" class="error-span">A valid email is
+                    <span *ngIf="emailField.invalid && emailField.touched && !emailSend" class="error-span">A valid email is
                         required.</span>
                 </div>
                 <div class="form-group floating-label">
-                    <textarea [(ngModel)]="inputValueMessage" name="inputValueMessage" #messageField="ngModel"
+                    <textarea [(ngModel)]="inputValueMessage" name="message" #messageField="ngModel"
                         id="message" (ngModelChange)="checkInputValues()" placeholder=" " rows="8" required></textarea>
                     <label class="label-textarea" for="message">Your message</label>
-                    <span *ngIf="messageField.invalid && messageField.touched" class="error-span">Message is
+                    <span *ngIf="messageField.invalid && messageField.touched && !emailSend" class="error-span">Message is
                         required.</span>
                 </div>
                 <div class="form-group checkbox">
@@ -44,6 +44,7 @@
                         </div>
                 </div>
                 <div class="button-send">
+                    <span *ngIf="emailSend" class="succes-span">Email successfully send.</span>
                     <button type="submit" [disabled]="contactForm.invalid" class="button">Say Hello :)</button>
                 </div>
             </form>

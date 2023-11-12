@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
+import { FormService } from '../services/form-service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.sass']
+  styleUrls: ['./contact.component.sass'],
 })
-
-
-
 export class ContactComponent {
   isHovering = false;
   isChecked = false;
@@ -18,34 +16,31 @@ export class ContactComponent {
   uncheckedHoverImg = 'assets/images/icons/checkbox/uncheck-hover.png';
   checkedHoverImg = 'assets/images/icons/checkbox/checked-hover.png';
 
-  errorspan:boolean = false;
-  buttonEnable:boolean = false;
+  errorspan: boolean = false;
+  buttonEnable: boolean = false;
 
   inputValueName: string;
   inputValueMail: string;
   inputValueMessage: string;
 
+  emailSend: boolean = false;
+
   scrollHover: boolean = true;
 
-  constructor(){
-  }
+  constructor(private formService: FormService) {}
 
   onCheckboxChange(event: Event) {
     this.isChecked = (event.target as HTMLInputElement).checked;
     this.checkInputValues();
   }
 
-  ngOnInit(){
-
-  }
-
   onSubmit(formValue: any) {
-    // You can now use formValue to access the submitted data
-    console.log('as');
-    // Add your form submission logic here, like sending the data to your server
+    this.formService.sendForm(formValue).subscribe();
+    this.inputValueName = ''
+    this.inputValueMail = ''
+    this.inputValueMessage = ''
+    this.emailSend = true;
   }
-
-
 
   onMouseOver() {
     this.isHovering = true;
@@ -62,19 +57,15 @@ export class ContactComponent {
     return this.isChecked ? this.checkedImg : this.uncheckedImg;
   }
 
-  checkInputValues(){
-    this.checkMail();
-   if(this.inputValueName && this.inputValueMessage && this.inputValueMail && this.isChecked)
-   this.buttonEnable = true; 
+  checkInputValues() {
+    if (
+      this.inputValueName &&
+      this.inputValueMessage &&
+      this.inputValueMail &&
+      this.isChecked
+    )
+    if(!this.emailSend){
+      this.buttonEnable = true;
+    }
   }
-
-  checkMail(){
-
-  }
-
-  sendMessage(){
-
-  }
-
 }
-

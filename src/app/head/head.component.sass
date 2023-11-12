@@ -62,6 +62,8 @@
     flex-direction: column
     background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5004595588235294) 30%, rgba(255,255,255,0.7973783263305322) 50%, rgba(255,255,255,0.9) 100%)
     z-index: 1000
+    animation: dropDown 300ms ease-in-out forwards
+    transform-origin: top center
     a
         z-index: 10000
         margin: 10px
@@ -72,6 +74,20 @@
         text-decoration: none
         &:hover
             color: $base-color
+
+@keyframes dropDown
+    0%
+        transform: scaleY(0)
+
+    80%
+        transform: scaleY(1.1)
+
+    100%
+        transform: scaleY(1)
+
+
+
+
 .content
     max-width: $max-w
     width: 100%

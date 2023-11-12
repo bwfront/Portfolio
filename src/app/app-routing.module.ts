@@ -27,8 +27,9 @@ const routes: Routes = [
   { path: 'privacy', component: PrivacyComponent }
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes), RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
