@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./privacy.component.sass']
 })
 export class PrivacyComponent {
-
 }
