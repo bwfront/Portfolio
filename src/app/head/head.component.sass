@@ -1,7 +1,6 @@
 @import '_variables.sass'
 
 .head
-    width: 100vw
     height: 100vh
     max-height: 1325px
     overflow: hidden //Elipse
@@ -190,6 +189,8 @@
             height: auto
             max-height: calc( 100% - 150px )
 @media ( max-width: 1450px )
+    .icons-links
+        display: none !important
     .ellipse-big
         left: -300px
     .content
@@ -214,7 +215,7 @@
             bottom: -200px !important
             width: auto !important
             max-width: unset !important
-            height: calc( 100% - 250px ) !important
+            height: calc( 100% - 400px ) !important
 
 @media  ( max-width: 1150px )
     .navigation
@@ -282,7 +283,7 @@
             height: 45px !important
     .mobile-nav
         img
-            height: 40px !important
+            height: 35px !important
             width: auto !important
     .content
         img

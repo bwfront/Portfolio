@@ -11,7 +11,8 @@
         font-weight: 800
         color: $base-color
         font-family: 'Baloo Da 2', sans-serif
-
+a
+    cursor: pointer
 .content
     display: flex
     justify-content: space-between
@@ -137,11 +138,43 @@
     margin-top: 5px
 
 .succes-span
-    font-size: 14px
-    color: #65bc45
+    font-size: 15px
+    color: #6cc04d
     font-family: 'Montserrat', sans-serif
     position: absolute
-    margin-top: -3px
+    margin-top: -5px
+    font-weight: 400
+
+#notification
+    display: none
+    position: absolute
+    top: -50px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: green
+    color: white
+    padding: 10px
+    border-radius: 5px
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2)
+    font-family: 'Montserrat', sans-serif
+
+#notification.show
+    animation: dropDown 4s ease-in-out forwards
+    display: block
+
+@keyframes dropDown
+    0%
+        top: -80px
+        opacity: 0
+    30%
+        top: 20px
+        opacity: 0.8
+    60%
+        top: 20px
+        opacity: 1
+    100%
+        top: -80px
+        opacity: 0
 
 .scroll
     position: absolute
@@ -192,7 +225,7 @@
         top: -50px !important
         right: -20px !important
     .content
-        margin-top: 0px 
+        margin-top: 0px
 @media ( max-width: 600px )
     .ellipse-2
         top: -60px !important
@@ -204,5 +237,5 @@
 @media ( max-width: 500px )
     .text-heading
         font-size: 23px !important
-    .heading 
+    .heading
         font-size: 45px !important
