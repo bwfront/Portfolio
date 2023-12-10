@@ -26,13 +26,13 @@ export class MyworkComponent {
       github: 'https://github.com/bwfront/Sharkie',
     },
     {
-      title: 'Placeholder',
-      livetest: '',
-      img: 'sharkie.png',
-      devLanguage: 'Placeholder',
+      title: 'DABubble',
+      livetest: 'https://dabubble-1a43e.web.app/',
+      img: 'dabubble.png',
+      devLanguage: 'Angular | TypeScript | HTML | SASS(CSS)',
       description:
-        'Placeholder.',
-      github: 'https://github.com/bwfront/Placeholder',
+        'A user-friendly Slack clone app enabling easy team communication and collaboration through organized chats and channels.',
+      github: 'https://github.com/bwfront/DABubble',
     },
   ];
 }

@@ -1,0 +1,7 @@
+RewriteEngine On
+# Redirect all requests not pointing to an actual file to index.html
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.html [L]
